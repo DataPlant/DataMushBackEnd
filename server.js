@@ -1,4 +1,7 @@
+const dotenv = require('dotenv')
 const express = require('express')
+const cors = require('cors')
+ 
 
 //Routing//
 const mushRoutes = require('./controllers/mushController')
@@ -16,6 +19,7 @@ app.use(function(req, res, next) {
   });
 
   //Middling//
+  app.use(cors())
   app.use(express.json())
   app.use('/mushrooms', mushRoutes)
 

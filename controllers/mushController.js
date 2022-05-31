@@ -3,20 +3,20 @@ const db = require('../models/index.js')
 
 router.get('/', (req, res) => {
     db.Mushroom.find({})
-    .populate('EstiTime')
-    .exec((err, foundShrooms) => {
+    .populate('mushID')
+    .exec((err, foundProj) => {
         if (err) return console.log(err);
-        res.json(foundShrooms)
+        res.json(foundProj)
         console.log('populate check complete')
     })
 })
 
 router.get('/:id', (req, res) => {
     db.Mushroom.findById(req.params.id)
-    .populate('EstiTime')
-    .exec((err, foundShroooms) => {
+    .populate('mushID')
+    .exec((err, foundProj) => {
         if(err) return console.log(err)
-        res.json(foundShroooms)
+        res.json(foundProj)
     })
 })
 
