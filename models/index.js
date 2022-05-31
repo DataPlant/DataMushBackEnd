@@ -1,5 +1,5 @@
 const path = require('path')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const connectionString = 4000
 
@@ -8,6 +8,6 @@ mongoose.connect(connectionString, configOptions)
   .catch((err) => console.log(`MongoDB connection error: ${err}`));
 
 module.exports = {
-    Mushrooms: require('./Mushroom'),
-    EstiTime: require('./EstiTime')
+    Mushroom: require('./Mushroom'),
+    existingMushroom: require('./existingMushroom')
 }
